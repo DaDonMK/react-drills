@@ -1,26 +1,32 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+      message :['Array', 'LinkedList', 'Heaps', ' All with Love', 'I Hope...']
+    }
+  }
+
+
+  render(){
+    let todisplay = this.state.message.map((element, index) =>{
+      return <h2>{element}</h2>
+    })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <div className="App">
+      /* <h2>{this.state.message[0]}</h2>
+      <h2>{this.state.message[1]}</h2>
+      <h2>{this.state.message[2]}</h2>
+      <h2>{this.state.message[3]}</h2>
+      <h2>{this.state.message[4]}</h2> */
+
+    <div className="App">{todisplay}</div>
   );
+  }
 }
 
 export default App;
